@@ -1,4 +1,4 @@
-# Trabalho prático modulo 3 IGTI Data Engineer Cloud
+# Trabalho prático modulo 3 Cloud Data Engineer IGTI
 
 Utilizei um enviroment em docker para realizar o trabalho.
 
