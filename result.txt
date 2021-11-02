@@ -1,0 +1,244 @@
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.spark.unsafe.Platform (file:/opt/spark/jars/spark-unsafe_2.12-3.1.1.jar) to constructor java.nio.DirectByteBuffer(long,int)
+WARNING: Please consider reporting this to the maintainers of org.apache.spark.unsafe.Platform
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+21/11/02 21:55:45 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+======================= SparkSession Starting ========================
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+21/11/02 21:55:45 INFO SparkContext: Running Spark version 3.1.1
+21/11/02 21:55:45 INFO ResourceUtils: ==============================================================
+21/11/02 21:55:45 INFO ResourceUtils: No custom resources configured for spark.driver.
+21/11/02 21:55:45 INFO ResourceUtils: ==============================================================
+21/11/02 21:55:45 INFO SparkContext: Submitted application: trab-pratico-de-igti
+21/11/02 21:55:45 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+21/11/02 21:55:45 INFO ResourceProfile: Limiting resource is cpu
+21/11/02 21:55:45 INFO ResourceProfileManager: Added ResourceProfile id: 0
+21/11/02 21:55:45 INFO SecurityManager: Changing view acls to: root
+21/11/02 21:55:45 INFO SecurityManager: Changing modify acls to: root
+21/11/02 21:55:45 INFO SecurityManager: Changing view acls groups to: 
+21/11/02 21:55:45 INFO SecurityManager: Changing modify acls groups to: 
+21/11/02 21:55:45 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(root); groups with view permissions: Set(); users  with modify permissions: Set(root); groups with modify permissions: Set()
+21/11/02 21:55:46 INFO Utils: Successfully started service 'sparkDriver' on port 40329.
+21/11/02 21:55:46 INFO SparkEnv: Registering MapOutputTracker
+21/11/02 21:55:46 INFO SparkEnv: Registering BlockManagerMaster
+21/11/02 21:55:46 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+21/11/02 21:55:46 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+21/11/02 21:55:46 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+21/11/02 21:55:46 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-dab0b28d-0717-4baa-8547-487e681c3f27
+21/11/02 21:55:46 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+21/11/02 21:55:46 INFO SparkEnv: Registering OutputCommitCoordinator
+21/11/02 21:55:46 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+21/11/02 21:55:46 INFO SparkUI: Bound SparkUI to 0.0.0.0, and started at http://1aec61567cfb:4040
+21/11/02 21:55:46 INFO Executor: Starting executor ID driver on host 1aec61567cfb
+21/11/02 21:55:46 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 37573.
+21/11/02 21:55:46 INFO NettyBlockTransferService: Server created on 1aec61567cfb:37573
+21/11/02 21:55:46 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+21/11/02 21:55:46 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 1aec61567cfb, 37573, None)
+21/11/02 21:55:46 INFO BlockManagerMasterEndpoint: Registering block manager 1aec61567cfb:37573 with 434.4 MiB RAM, BlockManagerId(driver, 1aec61567cfb, 37573, None)
+21/11/02 21:55:46 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 1aec61567cfb, 37573, None)
+21/11/02 21:55:46 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 1aec61567cfb, 37573, None)
+21/11/02 21:55:47 INFO SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir ('file:/opt/spark/work-dir/spark-warehouse/').
+21/11/02 21:55:47 INFO SharedState: Warehouse path is 'file:/opt/spark/work-dir/spark-warehouse/'.
+============================== Read data =============================
+========================== Investigate data ==========================
+root
+ |-- tconst: string (nullable = true)
+ |-- titleType: string (nullable = true)
+ |-- primaryTitle: string (nullable = true)
+ |-- originalTitle: string (nullable = true)
+ |-- isAdult: string (nullable = true)
+ |-- startYear: string (nullable = true)
+ |-- endYear: string (nullable = true)
+ |-- runtimeMinutes: string (nullable = true)
+ |-- genres: string (nullable = true)
+
++---------+---------+--------------------+--------------------+-------+---------+-------+--------------+--------------------+
+|   tconst|titleType|        primaryTitle|       originalTitle|isAdult|startYear|endYear|runtimeMinutes|              genres|
++---------+---------+--------------------+--------------------+-------+---------+-------+--------------+--------------------+
+|tt0000001|    short|          Carmencita|          Carmencita|      0|     1894|     \N|             1|   Documentary,Short|
+|tt0000002|    short|Le clown et ses c...|Le clown et ses c...|      0|     1892|     \N|             5|     Animation,Short|
+|tt0000003|    short|      Pauvre Pierrot|      Pauvre Pierrot|      0|     1892|     \N|             4|Animation,Comedy,...|
+|tt0000004|    short|         Un bon bock|         Un bon bock|      0|     1892|     \N|            12|     Animation,Short|
+|tt0000005|    short|    Blacksmith Scene|    Blacksmith Scene|      0|     1893|     \N|             1|        Comedy,Short|
++---------+---------+--------------------+--------------------+-------+---------+-------+--------------+--------------------+
+only showing top 5 rows
+
+root
+ |-- tconst: string (nullable = true)
+ |-- averageRating: string (nullable = true)
+ |-- numVotes: string (nullable = true)
+
++---------+-------------+--------+
+|   tconst|averageRating|numVotes|
++---------+-------------+--------+
+|tt0000001|          5.7|    1809|
+|tt0000002|          6.0|     233|
+|tt0000003|          6.5|    1560|
+|tt0000004|          6.1|     152|
+|tt0000005|          6.2|    2383|
++---------+-------------+--------+
+only showing top 5 rows
+
++------------+
+|   titleType|
++------------+
+|    tvSeries|
+|tvMiniSeries|
+|     tvMovie|
+|     tvPilot|
+|   tvEpisode|
+|       movie|
+|   tvSpecial|
+|       video|
+|   videoGame|
+|     tvShort|
+|       short|
+| radioSeries|
+|radioEpisode|
++------------+
+
+Quantos filmes (incluindo os da televisão) foram lançados no ano de 2015?
+19987
+Qual o gênero de títulos mais frequente?
++-----------+-------+
+|   unique_g|  count|
++-----------+-------+
+|      Drama|2247995|
+|     Comedy|1653725|
+|      Short|1021850|
+|  Talk-Show| 900198|
+|Documentary| 764885|
+|    Romance| 724729|
+|         \N| 643012|
+|     Family| 571470|
+|       News| 524662|
+| Reality-TV| 423455|
+|  Animation| 406284|
+|      Music| 394008|
+|      Crime| 351447|
+|     Action| 334580|
+|  Adventure| 324325|
+|  Game-Show| 252533|
+|      Adult| 242704|
+|      Sport| 178594|
+|    Fantasy| 174119|
+|    Mystery| 162448|
++-----------+-------+
+only showing top 20 rows
+
+Qual o gênero com a melhor nota média de títulos?
++-----------+------------------+
+|   unique_g|             media|
++-----------+------------------+
+|    History| 7.353780102645086|
+|Documentary| 7.240198535554575|
+|  Biography|  7.17553191489362|
+|    Mystery| 7.170086406897942|
+|      Crime|7.1598428684859385|
+|  Adventure| 7.107629703351738|
+|    Fantasy| 7.095145650845386|
+|  Animation| 7.089381171483224|
+|    Western| 7.080683426568711|
+|     Family|  7.07005492603448|
+|      Drama| 7.040979155040203|
+|        War|7.0091151344149205|
+|     Action|7.0070981387478835|
+|      Sport| 6.966792418526429|
+|     Comedy|6.9600165509184135|
+|      Music| 6.927469624015715|
+| Reality-TV| 6.892611170895967|
+|  Game-Show| 6.876828101904185|
+|    Romance| 6.864016164703973|
+|      Short| 6.791292438368555|
++-----------+------------------+
+only showing top 20 rows
+
+Qual o vídeo game do gênero aventura mais bem avaliado em 2020?
++----------+---------+--------------------+--------------------+-------+---------+-------+--------------+--------------------+-------------+--------+---------+
+|    tconst|titleType|        primaryTitle|       originalTitle|isAdult|startYear|endYear|runtimeMinutes|              genres|averageRating|numVotes| unique_g|
++----------+---------+--------------------+--------------------+-------+---------+-------+--------------+--------------------+-------------+--------+---------+
+|tt11321196|videoGame|     Half-Life: Alyx|     Half-Life: Alyx|      0|     2020|     \N|            \N|[Action, Adventur...|          9.5|     506|Adventure|
+| tt7651352|videoGame|   Ghost of Tsushima|   Ghost of Tsushima|      0|     2020|     \N|            \N|[Action, Adventur...|          9.3|    5270|Adventure|
+|tt14106780|videoGame|               Omori|               Omori|      0|     2020|     \N|            \N|[Adventure, Drama...|          9.2|      79|Adventure|
+| tt6057416|videoGame|Final Fantasy VII...|Final Fantasy VII...|      0|     2020|     \N|            \N|[Action, Adventur...|          9.1|    2749|Adventure|
+| tt8329350|videoGame|Ori and the Will ...|Ori and the Will ...|      0|     2020|     \N|            \N|[Adventure, Fantasy]|          9.1|     724|Adventure|
+|tt10879724|videoGame|Mega Man Zero/ZX ...|Mega Man Zero/ZX ...|      0|     2020|     \N|            \N|[Action, Adventur...|          8.9|      11|Adventure|
+|tt13635622|videoGame|There Is No Game:...|There Is No Game:...|      0|     2020|     \N|            \N| [Adventure, Comedy]|          8.9|      39|Adventure|
+|tt10951016|videoGame|Xenoblade Chronic...|Xenoblade Chronic...|      0|     2020|     \N|            \N|[Action, Adventur...|          8.8|     128|Adventure|
+|tt11121754|videoGame|Yakuza: Like a Dr...|Ryu ga gotoku 7: ...|      0|     2020|     \N|            \N|[Action, Adventur...|          8.8|     279|Adventure|
+|tt12507852|videoGame|       Demon's Souls|       Demon's Souls|      0|     2020|     \N|            \N|[Action, Adventur...|          8.8|     439|Adventure|
+| tt8550890|videoGame|        Doom Eternal|        Doom Eternal|      0|     2020|     \N|            \N|[Action, Adventur...|          8.7|    2007|Adventure|
+|tt11191308|videoGame|   Pixel Ripped 1995|   Pixel Ripped 1995|      0|     2020|     \N|           300|[Action, Adventur...|          8.7|      21|Adventure|
+|tt12753708|videoGame|    Astro's Playroom|    Astro's Playroom|      0|     2020|     \N|            \N|[Adventure, Anima...|          8.6|     580|Adventure|
+|tt12496734|videoGame|Spider-Man: Miles...|Spider-Man: Miles...|      0|     2020|     \N|            \N|[Action, Adventur...|          8.6|    2802|Adventure|
+|tt13671106|videoGame|               Haven|               Haven|      0|     2020|     \N|            \N|[Adventure, Roman...|          8.5|      30|Adventure|
+|tt12277458|videoGame|Call of Duty: Mod...|Call of Duty: Mod...|      0|     2020|     \N|            \N|[Action, Adventur...|          8.5|     489|Adventure|
+|tt13657086|videoGame|        Pumpkin Jack|        Pumpkin Jack|      0|     2020|     \N|            \N|[Action, Adventur...|          8.4|       7|Adventure|
+|tt12205748|videoGame|      Desperados III|      Desperados III|      0|     2020|     \N|            \N|[Adventure, Western]|          8.4|      93|Adventure|
+|tt10476972|videoGame|Animal Crossing: ...|Atsumare doubutsu...|      0|     2020|     \N|            \N|[Adventure, Fantasy]|          8.4|     658|Adventure|
+|tt10920756|videoGame|Hatsune Miku Proj...|Hatsune Miku Proj...|      0|     2020|     \N|            \N|[Adventure, Music...|          8.3|      10|Adventure|
++----------+---------+--------------------+--------------------+-------+---------+-------+--------------+--------------------+-------------+--------+---------+
+only showing top 20 rows
+
+Qual o percentual de títulos do gênero comédia lançados em 2018 em relação ao total de títulos lançados nesse ano?
+ERRADO!!!!!
++--------+-----+------------------+
+|unique_g|count|           percent|
++--------+-----+------------------+
+|  Comedy|78809|12.612244963279833|
++--------+-----+------------------+
+
+Qual o percentual de títulos do gênero comédia lançados em 2018 em relação ao total de títulos lançados nesse ano?
+CORRETO!!!!
++-------------------------------------+
+|((sum(comedy) / count(comedy)) * 100)|
++-------------------------------------+
+|                   19.592336989488967|
++-------------------------------------+
+
+
+Considere a definição de uma udf abaixo: 
+
+def sqr_divide(value): 
+
+    return (value**2)/2 
+
+sqr_divide_udf = udf(sqr_divide, IntegerType())
+
+A definição de sqr_divide_udf possui um problema. Depois de solucionar o problema, ao executar 
+
++------------------+
+|     averageRating|
++------------------+
+|24.899137999843724|
++------------------+
+
+Deseja-se utilizar um join para retornar somente as linhas referentes a títulos que estão sem nota, isto é, não aparecem no df_ratings
++---------+---------+--------------------+--------------------+-------+---------+-------+--------------+--------------------+
+|   tconst|titleType|        primaryTitle|       originalTitle|isAdult|startYear|endYear|runtimeMinutes|              genres|
++---------+---------+--------------------+--------------------+-------+---------+-------+--------------+--------------------+
+|tt0000180|    short|  Le chemin de croix|  Le chemin de croix|      0|     1898|     \N|            \N|               Short|
+|tt0000185|    short|La crèche à Bethléem|La crèche à Bethléem|      0|     1898|     \N|            \N|               Short|
+|tt0000189|    short|             Dorotea|             Dorotea|      0|     1898|     \N|            \N|               Short|
+|tt0000191|    short|Déménagement à la...|Déménagement à la...|      0|     1898|     \N|            \N|               Short|
+|tt0000193|    short|L'entrée à Jérusalem|L'entrée à Jérusalem|      0|     1898|     \N|            \N|               Short|
+|tt0000195|    short| Les farces de Jocko| Les farces de Jocko|      0|     1898|     \N|            \N|        Comedy,Short|
+|tt0000200|    short|Gran corrida de t...|Gran corrida de t...|      0|     1898|     \N|            \N|Documentary,Short...|
+|tt0000201|    short|  Indian War Council|  Indian War Council|      0|     1898|     \N|            \N|          News,Short|
+|tt0000202|    short|Le jardin des oli...|Le jardin des oli...|      0|     1898|     \N|            \N|               Short|
+|tt0000203|    short|Je vous y prrrrends!|Je vous y prrrrends!|      0|     1898|     \N|            \N|               Short|
+|tt0000212|    short|Saida do Paquete ...|Saida do Paquete ...|      0|     1898|     \N|            \N|               Short|
+|tt0000216|    short|Visita de Doña Ma...|Visita de Doña Ma...|      0|     1898|     \N|            \N|          News,Short|
+|tt0000217|    short|     Waves and Spray|     Waves and Spray|      0|     1898|     \N|            \N|               Short|
+|tt0000220|    short|The Artist and th...|The Artist and th...|      0|     1901|     \N|            \N|       Romance,Short|
+|tt0000221|    short|Aspectos da Praia...|Aspectos da Praia...|      0|     1899|     \N|            \N|   Documentary,Short|
+|tt0000224|    short|         Battlefield|         Battlefield|      0|     1899|     \N|            \N|               Short|
+|tt0000226|    short|           Boat Race|           Boat Race|      0|     1899|     \N|            \N|               Short|
+|tt0000227|    short|Bombardment of Ma...|Bombardment of Ma...|      0|     1899|     \N|            \N|     Drama,Short,War|
+|tt0000232|    short|      Le chiffonnier|      Le chiffonnier|      0|     1899|     \N|            \N|        Comedy,Short|
+|tt0000236|    short|      Courte échelle|      Courte échelle|      0|     1899|     \N|            \N|               Short|
++---------+---------+--------------------+--------------------+-------+---------+-------+--------------+--------------------+
+only showing top 20 rows
+
+============================== Finished ==============================
